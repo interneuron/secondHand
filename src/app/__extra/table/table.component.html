@@ -1,0 +1,77 @@
+<!--<app-price-loader [isAdmin]="isAdmin"></app-price-loader>-->
+<div class="block_price">
+  <div class="block_item">
+    <h4>Selections</h4>
+    <ul>
+      <li *ngFor='let sel of selected'>
+        {{sel.name}}
+      </li>
+      <li *ngIf="!selected.length">No Selections</li>
+    </ul>
+  </div>
+</div>
+<div class="block_sort">
+  <div class="block_sort_name">
+    <md-form-field [ngStyle]="{width: nameWidth}"
+                   class="example-full-width">
+      <input mdInput
+             placeholder="Введите название"
+             value=""
+             #name
+             (keyup)="updateFilter($event, cat, state)">
+    </md-form-field>
+  </div>
+  <div class="block_sort_category">
+    <md-select placeholder="Категория"
+               [ngStyle]="{width: catWidth}"
+               #cat
+               (onClose)="onMouseOutCategory(cat)"
+               (valueChange)="sortingItems(name,cat, state)">
+      <md-option *ngFor="let item of category" [value]="item.value">
+        {{ item.viewValue }}
+      </md-option>
+    </md-select>
+  </div>
+  <div class="block_sort_category">
+    <md-select placeholder="Страна"
+               [ngStyle]="{width: countryWidth}"
+               #state
+               (onClose)="onMouseOutCountry(state)"
+               (valueChange)="sortingItems(name, cat, state)">
+      <md-option *ngFor="let item of country" [value]="item.value">
+        {{ item.viewValue }}
+      </md-option>
+    </md-select>
+  </div>
+  <div class="block_download">
+    <div class="block_b">
+      <p class="block_b_title">Прайс от 21.09.2017</p>
+      <div class="block_b_icon">
+        <div class="download_pdf">
+          <a href="#"><img src="../../../assets/img/pdf.ico" alt="Скачать прайс в pdf"/></a>
+        </div>
+        <div class="download_excel">
+          <a href="#"><img src="../../../assets/img/excel.ico" alt="Скачать прайс в pdf"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="block_table">
+  <ngx-datatable #valTable
+                 class="material striped"
+                 [headerHeight]="40"
+                 [columnMode]="'force'"
+                 [limit]="15"
+                 [footerHeight]="50"
+                 [rowHeight]="50"
+                 [rows]="rows"
+                 [columns]="columns"
+                 [selected]="selected"
+                 [selectionType]="'single'"
+                 [scrollbarV]="true"
+                 (activate)="onActivate($event)"
+                 (select)='onSelect($event, valTable)'
+                 (resize)='resizeHeader($event, valTable)'>
+  </ngx-datatable>
+</div>

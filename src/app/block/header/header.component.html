@@ -1,0 +1,33 @@
+<header>
+  <div class="wrapper">
+    <div class="site_header">
+      <a class="header_logo">
+        <img [src]=imgSrc>
+      </a>
+      <div class="header_block">
+        <div class="block_worktime">
+          <now class="curr_time" (istyle)="changeStyleI($event)"></now>
+          <i class="fa fa-clock-o i-contact" ngClass="{{istyle}}" aria-hidden="true"></i>
+          <div class="content-text">
+            <p class="text_center"><b>Время работы:</b></p>
+            <img [src]=workTime>
+            <p>c <b>10.00</b> до <b>15.00</b></p>
+            <p>Выходные: <b>Сб-Вс</b></p>
+          </div>
+        </div>
+        <div class="block_location">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <div class="content-text">
+            <p class="content-location" *ngFor="let item of location"><a href="#">{{item}}</a></p>
+          </div>
+        </div>
+        <div class="block_contact">
+          <i class="fa fa-mobile" aria-hidden="true"></i>
+          <div class="content-text">
+            <p class="phone_number" *ngFor="let item of contacts">{{item}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

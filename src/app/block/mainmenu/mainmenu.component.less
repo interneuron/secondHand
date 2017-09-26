@@ -1,0 +1,100 @@
+@import "../../../assets/less/insert";
+
+@size: 40px;
+
+//Главная навигация
+.nav_site {
+  margin: 0 0 5px 0;
+  //background: #ccc;
+
+  //margin: 90px auto;
+  //position: fixed;
+  //top: 0px;
+  //width: 100%;
+
+  .main_nav {
+    .row-flex();
+    width: 100%;
+    height: @size;
+
+    margin-left: 0;
+    margin-right: 0;
+    background: #fff;
+
+    .home_block {
+      width: @size;
+      height: @size;
+      background: red;
+      text-align: center;
+      .row-flex();
+      margin-left: 0;
+      margin-right: 0;
+      justify-content: center;
+      align-items: center;
+      vertical-align: middle;
+      i {
+        font-size: 30px;
+        color: white;
+      }
+    }
+
+    .nav_block {
+
+      .nav_link {
+        .row-flex();
+        width: 100%;
+        margin: 0 0 0 0;
+        justify-content: space-around;
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            color: red;
+          }
+        }
+        li {
+          .row-flex();
+          width: 125px;
+          height: @size;
+
+          margin: 0;
+
+          justify-content: center;
+          align-items: center;
+
+          text-align: center;
+          vertical-align: middle;
+          background: #F0F0F0;
+          color: black;
+
+          &:hover {
+            background: linear-gradient(0deg, #F0F0F0, #FFFFFF);
+            a {
+              color: red;
+            }
+
+          }
+        }
+        .nav_bay {
+          background: #E9E6E6;
+          color: black;
+        }
+        .nav_price {
+          width: 105px;
+          background: #A6A6A6;
+        }
+        .nav_contact {
+          width: 190px;
+          background: #5A5A5A;
+          a {
+            color: #fff;
+          }
+        }
+      }
+
+    }
+  }
+
+}

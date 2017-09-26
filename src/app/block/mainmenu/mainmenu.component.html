@@ -1,0 +1,19 @@
+<div class="nav_site">
+  <div class="wrapper">
+    <nav class="main_nav">
+      <div class="home_block">
+        <a routerLink="home"  class="home_link">
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="nav_block">
+        <ul class="nav_link">
+          <li #item (click)="clicked(item)"
+              *ngFor="let item of menu; let i = index" ngClass="{{menu[i].styleName}}">
+            <a routerLink="{{menu[i].route}}" routerLinkActive="">{{menu[i].title}}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
