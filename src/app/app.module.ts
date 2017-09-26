@@ -7,6 +7,7 @@ import {MdSelectModule, MdInputModule} from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //--------------------------------------------------------
 import {NgxDatatableModule} from "@swimlane/ngx-datatable";
+import {NgxGalleryModule} from 'ngx-gallery';
 
 //--------------------------------------------------------------
 import {
@@ -16,9 +17,11 @@ import {
     HomeComponent,
     AppTimeComponent,
     TableComponent,
-    AppRoutingModule
+    AppRoutingModule,
+    GalleryComponent
 } from "./index";
 import {DataService} from "./__service/data.service";
+
 //--------------------------------------------------------------
 
 @NgModule({
@@ -29,7 +32,8 @@ import {DataService} from "./__service/data.service";
         MainmenuComponent,
         ContactsComponent,
         HomeComponent,
-        TableComponent
+        TableComponent,
+        GalleryComponent
     ],
     imports: [
         AppRoutingModule,
@@ -39,7 +43,8 @@ import {DataService} from "./__service/data.service";
         ReactiveFormsModule,
         MdSelectModule,
         MdInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        NgxGalleryModule
     ],
     providers: [DataService],
     bootstrap: [AppComponent]
